@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/WelcomeBack_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Welcome back, here is your fitness overview."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/CaroliesNumber_text"
+        android:layout_width="94dp"
+        android:layout_height="56dp"
+        android:gravity="center_horizontal"
+        android:text="2021"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/CaroliesBurned_text"
+        app:layout_constraintEnd_toEndOf="@+id/CaroliesProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/CaroliesProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeBack_text" />
+
+    <TextView
+        android:id="@+id/CaroliesBurned_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="carolies burned"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <ProgressBar
+        android:id="@+id/CaroliesProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        android:progress="65"
+        app:layout_constraintBottom_toTopOf="@+id/CaroliesBurned_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeBack_text" />
+
+    <ProgressBar
+        android:id="@+id/ExerciseMinsProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        android:progress="100"
+        app:layout_constraintBottom_toTopOf="@+id/ExerciseMins_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeBack_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/ExerciseMins_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="mins of exercises completed"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817" />
+
+    <TextView
+        android:id="@+id/ExerciseMinsNumber_text"
+        android:layout_width="94dp"
+        android:layout_height="56dp"
+        android:gravity="center_horizontal"
+        android:text="45"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ExerciseMinsProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/ExerciseMinsProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/ExerciseMinsProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/ExerciseMinsProgressBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
