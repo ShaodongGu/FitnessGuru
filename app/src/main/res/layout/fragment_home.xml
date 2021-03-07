@@ -27,7 +27,7 @@
         android:layout_width="94dp"
         android:layout_height="56dp"
         android:gravity="center_horizontal"
-        android:text="2021"
+        android:text="0"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/CaroliesBurned_text"
         app:layout_constraintEnd_toEndOf="@+id/CaroliesProgressBar"
@@ -52,12 +52,11 @@
 
     <ProgressBar
         android:id="@+id/CaroliesProgressBar"
-        style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/circle"
-        android:progress="65"
+        android:progress="0"
         app:layout_constraintBottom_toTopOf="@+id/CaroliesBurned_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +69,7 @@
         android:layout_height="220dp"
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/circle"
-        android:progress="100"
+        android:progress="0"
         app:layout_constraintBottom_toTopOf="@+id/ExerciseMins_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,11 +97,21 @@
         android:layout_width="94dp"
         android:layout_height="56dp"
         android:gravity="center_horizontal"
-        android:text="45"
+        android:text="0"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/ExerciseMinsProgressBar"
         app:layout_constraintEnd_toEndOf="@+id/ExerciseMinsProgressBar"
         app:layout_constraintStart_toStartOf="@+id/ExerciseMinsProgressBar"
         app:layout_constraintTop_toTopOf="@+id/ExerciseMinsProgressBar" />
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH TODAY's GOAL!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
