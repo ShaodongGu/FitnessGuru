@@ -42,7 +42,7 @@ public class WorkoutFragment extends Fragment {
         workoutViewResults = (TextView) v.findViewById(R.id.Workout_text);
 
         workoutViewResults.setMovementMethod(new ScrollingMovementMethod());
-
+        String workoutPageDescription = "Repeat each workout 3 times!";
         String jsonString = loadJSONFromAsset();
         ArrayList<String> exerciseList = new ArrayList<String>(); // list of exercises
         ArrayList<String> descriptionList = new ArrayList<String>(); // list of exercises descriptions
@@ -54,6 +54,8 @@ public class WorkoutFragment extends Fragment {
             JSONArray jsonArray = obj.getJSONArray("Workouts");
 
             StringBuilder output = new StringBuilder();
+            output.append(workoutPageDescription + "\n\n");
+
             // goes through all json objects and adds exercise to string "output"
             for(int i = 0; i<jsonArray.length(); i++)
             {
