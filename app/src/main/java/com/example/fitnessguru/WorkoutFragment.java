@@ -1,6 +1,7 @@
 package com.example.fitnessguru;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.Set;
+import java.util.Collections;
 
 public class WorkoutFragment extends Fragment {
     private TextView workoutViewResults;
@@ -35,7 +41,13 @@ public class WorkoutFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_workout, container, false);
         workoutViewResults = (TextView) v.findViewById(R.id.Workout_text);
 
+        workoutViewResults.setMovementMethod(new ScrollingMovementMethod());
+
         String jsonString = loadJSONFromAsset();
+        ArrayList<String> exerciseList = new ArrayList<String>(); // list of exercises
+        ArrayList<String> descriptionList = new ArrayList<String>(); // list of exercises descriptions
+        ArrayList<String> subExerciseList = new ArrayList<String>();
+
         try {
             // get JSONObject from JSON file
             JSONObject obj = new JSONObject(jsonString);
@@ -47,8 +59,21 @@ public class WorkoutFragment extends Fragment {
             {
                 JSONObject exercise = jsonArray.getJSONObject(i);
                 String exerciseName = exercise.getString("Exercise");
-                output.append(exerciseName + "\n");
+                String description = exercise.getString("Notes");
+                exerciseList.add(exerciseName); // adds exercise to list
+                descriptionList.add(description); // adds exercise description to list
+               // output.append(exerciseName + "\n");
             }
+
+            int exerciseListSize = exerciseList.size();
+            Collections.shuffle(exerciseList);
+
+            for(int i = 0; i<5; i++)
+            {
+                output.append(exerciseList.get(i) + ":" + "\n" + descriptionList.get(i) +"\n\n");
+            }
+
+
 
             workoutViewResults.setText(output.toString());
 
