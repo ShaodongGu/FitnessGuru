@@ -37,12 +37,17 @@ public class WorkoutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        int repeat_times = 3;
 
         View v = inflater.inflate(R.layout.fragment_workout, container, false);
         workoutViewResults = (TextView) v.findViewById(R.id.Workout_text);
 
         workoutViewResults.setMovementMethod(new ScrollingMovementMethod());
-        String workoutPageDescription = "Repeat each workout 3 times!";
+        String workoutPageDescription = "Repeat each workout " + repeat_times + " times!";
+        if (MainActivity.all_weights.size() > 5){
+            repeat_times += 2;
+        }
+
         String jsonString = loadJSONFromAsset();
         ArrayList<String> exerciseList = new ArrayList<String>(); // list of exercises
         ArrayList<String> descriptionList = new ArrayList<String>(); // list of exercises descriptions
@@ -64,7 +69,7 @@ public class WorkoutFragment extends Fragment {
                 String description = exercise.getString("Notes");
                 exerciseList.add(exerciseName); // adds exercise to list
                 descriptionList.add(description); // adds exercise description to list
-               // output.append(exerciseName + "\n");
+                // output.append(exerciseName + "\n");
             }
 
             int exerciseListSize = exerciseList.size();

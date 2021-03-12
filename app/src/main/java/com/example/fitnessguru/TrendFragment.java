@@ -22,13 +22,12 @@ public class TrendFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_trend, container, false);
 
         GraphView graph = (GraphView) v.findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
+        DataPoint[] all_points = new DataPoint[MainActivity.all_weights.size()];
+        for(int i=0; i < MainActivity.all_weights.size(); i++){
+            DataPoint a = new DataPoint(i, MainActivity.all_weights.get(i));
+            all_points[i] = a;
+        }
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(all_points);
         graph.addSeries(series);
 
         return v;
